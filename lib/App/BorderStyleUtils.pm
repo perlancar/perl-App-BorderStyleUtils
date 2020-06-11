@@ -1,4 +1,4 @@
-package App::BorderStyleeUtils;
+package App::BorderStyleUtils;
 
 # AUTHORITY
 # DATE
