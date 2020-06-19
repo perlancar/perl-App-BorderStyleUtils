@@ -31,9 +31,9 @@ sub list_border_style_modules {
     my %resmeta;
 
     my $mods = Module::List::Tiny::list_modules(
-        "", {list_modules => 1, recurse => 1});
+        "BorderStyle::", {list_modules => 1, recurse => 1});
     for my $mod (sort keys %$mods) {
-        next unless $mod =~ /(\A|::)BorderStyle::/;
+        $mod =~ s/\ABorderStyle:://;
         push @res, $mod;
     }
 
