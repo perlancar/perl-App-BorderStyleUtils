@@ -113,7 +113,7 @@ OPPPPPPPPQPPPPPPPPR     #
 L ...... M ...... N     #
 STTTTTTTTUTTTTTTTTV     #
 
-ABBBBBCBBBBBCBBBBBCBBBBBD     #
+ABBBBBBBBBBBCBBBBBCBBBBBD     #
 E ,,,,,,,,, F ,,, F ,,, G     #
 HIIIIIaIIIIIJIIIIIbIIIIIK     #
 L ... M ... M ......... N     #
