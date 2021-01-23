@@ -116,7 +116,7 @@ HIIIIIaIIIIIJIIIIIbIIIIIK     #
 L ... M ... M ......... N     #
 OPPPPPfPPPPPQPPPPPePPPPPR     #
 L ......... M ... M ... N     #
-OPPPPPPPPPPPQPPPPPePPPPPR     # y
+OPPPPPPPPPPPQPPPPPfPPPPPR     # y
 L ......... M ......... N     #
 L           gPPPPPPPPPPPR     #
 L           M ......... N     #
