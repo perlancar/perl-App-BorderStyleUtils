@@ -63,9 +63,6 @@ sub show_border_style {
     my $bs = Module::Load::Util::instantiate_class_with_optional_args(
         {ns_prefix=>'BorderStyle'}, $args{style});
 
-    return [412, "Box char styles not supported yet"]
-        if $bs->get_struct->{box_chars};
-
     my $map = {
         A => sub { $bs->get_border_char(0, 0) // '' },
         B => sub { $bs->get_border_char(0, 1) // '' },
