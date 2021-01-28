@@ -1,3 +1,9 @@
+0.009   2021-01-28  Released-By: PERLANCAR; Urgency: medium
+
+	- [cli show-border-style] Show position/indexes of each border
+	  character.
+
+
 0.008   2021-01-23  Released-By: PERLANCAR; Urgency: medium
 
 	- Fix another typo.
