@@ -93,19 +93,39 @@ sub show_border_style {
         U => sub { $bs->get_border_char(5, 2) // '' },
         V => sub { $bs->get_border_char(5, 3) // '' },
 
-        x => sub { "Table without row/column spans" },
-        y => sub { "Table with row/column spans" },
-        _text => sub {
+        x => sub { 'x' },
+        y => sub { 'y' },
+        ###
+
+        s => sub { "Table without row/column spans" },
+        t => sub { "Table with row/column spans" },
+        u => sub { "Positions for border character" },
+        _symbols => sub {
             my $template = shift;
-            String::Pad::pad($template =~ /,/ ? 'header' : 'cell', length($template), 'r', ' ', 1);
+            if ($template =~ /\A[.,]+\z/) {
+                String::Pad::pad($template =~ /,/ ? 'header' : 'cell', length($template), 'r', ' ', 1);
+            }
+            #die "BUG: Unknown template '$template'";
         },
     };
 
     my $table = <<'_';
+# u
+
+ ---------------------------------------------
+ y\x  0    1    2    3    4    5    6    7
+  0  'A'  'B'  'C'  'D'
+  1  'E'  'F'  'G'
+  2  'H'  'I'  'J'  'K'  'a'  'b'
+  3  'L'  'M'  'N'
+  4  'O'  'P'  'Q'  'R'  'e'  'f'  'g'  'h'
+  5  'S'  'T'  'U'  'V'
+ ---------------------------------------------
+
 ABBBBBBBBCBBBBBBBBD     #
 E ,,,,,, F ,,,,,, G     #
 HIIIIIIIIJIIIIIIIIK     #
-L ...... M ...... N     # x
+L ...... M ...... N     # s
 OPPPPPPPPQPPPPPPPPR     #
 L ...... M ...... N     #
 STTTTTTTTUTTTTTTTTV     #
@@ -116,7 +136,7 @@ HIIIIIaIIIIIJIIIIIbIIIIIK     #
 L ... M ... M ......... N     #
 OPPPPPfPPPPPQPPPPPePPPPPR     #
 L ......... M ... M ... N     #
-OPPPPPPPPPPPQPPPPPfPPPPPR     # y
+OPPPPPPPPPPPQPPPPPfPPPPPR     # t
 L ......... M ......... N     #
 L           gPPPPPPPPPPPR     #
 L           M ......... N     #
@@ -127,7 +147,7 @@ _
 
     $table =~ s{([A-Za-z#]|([.,])+)}
                {
-                   $2 ? $map->{_text}->($1) :
+                   $2 ? $map->{_symbols}->($1) :
                        $map->{$1} ? $map->{$1}->() : $1
                }eg;
 
