@@ -7,6 +7,7 @@ package App::BorderStyleUtils;
 
 use 5.010001;
 use strict;
+use utf8;
 use warnings;
 use Log::ger;
 
@@ -93,13 +94,25 @@ sub show_border_style {
         U => sub { $bs->get_border_char(5, 2) // '' },
         V => sub { $bs->get_border_char(5, 3) // '' },
 
+        'Ȧ' => sub { $bs->get_border_char(6, 0) // '' },
+        'Ḃ' => sub { $bs->get_border_char(6, 1) // '' },
+        'Ċ' => sub { $bs->get_border_char(6, 2) // '' },
+        'Ḋ' => sub { $bs->get_border_char(6, 3) // '' },
+
+        'Ṣ' => sub { $bs->get_border_char(7, 0) // '' },
+        'Ṭ' => sub { $bs->get_border_char(7, 1) // '' },
+        'Ụ' => sub { $bs->get_border_char(7, 2) // '' },
+        'Ṿ' => sub { $bs->get_border_char(7, 3) // '' },
+
         x => sub { 'x' },
         y => sub { 'y' },
         ###
 
-        s => sub { "Table without row/column spans" },
-        t => sub { "Table with row/column spans" },
-        u => sub { "Positions for border character" },
+        t0 => sub { "Positions for border character" },
+        t1 => sub { "Table with header row, without row/column spans" },
+        t2 => sub { "Table without header row, with data rows" },
+        t3 => sub { "Table with header row, but without any data row" },
+        t4 => sub { "Table with row/column spans" },
         _symbols => sub {
             my $template = shift;
             if ($template =~ /\A[.,]+\z/) {
@@ -110,7 +123,7 @@ sub show_border_style {
     };
 
     my $table = <<'_';
-# u
+# t0
 
  ---------------------------------------------
  y\x  0    1    2    3    4    5    6    7
@@ -120,15 +133,28 @@ sub show_border_style {
   3  'L'  'M'  'N'
   4  'O'  'P'  'Q'  'R'  'e'  'f'  'g'  'h'
   5  'S'  'T'  'U'  'V'
+
+  6  'Ȧ'  'Ḃ'  'Ċ'  'Ḋ'
+  7  'Ṣ'  'Ṭ'  'Ụ'  'Ṿ'
  ---------------------------------------------
 
 ABBBBBBBBCBBBBBBBBD     #
 E ,,,,,, F ,,,,,, G     #
 HIIIIIIIIJIIIIIIIIK     #
-L ...... M ...... N     # s
+L ...... M ...... N     # t1
 OPPPPPPPPQPPPPPPPPR     #
 L ...... M ...... N     #
 STTTTTTTTUTTTTTTTTV     #
+
+ȦḂḂḂḂḂḂḂḂĊḂḂḂḂḂḂḂḂḊ     #
+L ...... M ...... N     # t2
+OPPPPPPPPQPPPPPPPPR     #
+L ...... M ...... N     #
+STTTTTTTTUTTTTTTTTV     #
+
+ABBBBBBBBCBBBBBBBBD     #
+E ,,,,,, F ,,,,,, G     # t3
+ṢṬṬṬṬṬṬṬṬỤṬṬṬṬṬṬṬṬṾ     #
 
 ABBBBBBBBBBBCBBBBBCBBBBBD     #
 E ,,,,,,,,, F ,,, F ,,, G     #
@@ -136,7 +162,7 @@ HIIIIIaIIIIIJIIIIIbIIIIIK     #
 L ... M ... M ......... N     #
 OPPPPPfPPPPPQPPPPPePPPPPR     #
 L ......... M ... M ... N     #
-OPPPPPPPPPPPQPPPPPfPPPPPR     # t
+OPPPPPPPPPPPQPPPPPfPPPPPR     # t4
 L ......... M ......... N     #
 L           gPPPPPPPPPPPR     #
 L           M ......... N     #
@@ -145,7 +171,7 @@ L ......... M           N     #
 STTTTTTTTTTTUTTTTTTTTTTTV     #
 _
 
-    $table =~ s{([A-Za-z#]|([.,])+)}
+    $table =~ s{([A-Za-su-zȦḂĊḊṢṬỤṾ#]|t\d+|([.,])+)}
                {
                    $2 ? $map->{_symbols}->($1) :
                        $map->{$1} ? $map->{$1}->() : $1
