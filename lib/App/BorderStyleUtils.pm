@@ -113,6 +113,14 @@ sub show_border_style {
         t2 => sub { "Table without header row, with data rows" },
         t3 => sub { "Table with header row, but without any data row" },
         t4 => sub { "Table with row/column spans" },
+        t5 => sub { "top border" },
+        t6 => sub { "header row" },
+        t7 => sub { "separator between header & data row" },
+        t8 => sub { "data row" },
+        t9 => sub { "separator between data rows" },
+        t10=> sub { "bottom border" },
+        t11=> sub { "top border (for case when there is no header row)" },
+        t12=> sub { "bottom border (for case when there is header row but no data row)" },
         _symbols => sub {
             my $template = shift;
             if ($template =~ /\A[.,]+\z/) {
@@ -127,15 +135,15 @@ sub show_border_style {
 
  ---------------------------------------------
  y\x  0    1    2    3    4    5    6    7
-  0  'A'  'B'  'C'  'D'
-  1  'E'  'F'  'G'
-  2  'H'  'I'  'J'  'K'  'a'  'b'
-  3  'L'  'M'  'N'
-  4  'O'  'P'  'Q'  'R'  'e'  'f'  'g'  'h'
-  5  'S'  'T'  'U'  'V'
+  0  'A'  'B'  'C'  'D'                              <--- t5
+  1  'E'  'F'  'G'                                   <--- t6
+  2  'H'  'I'  'J'  'K'  'a'  'b'                    <--- t7
+  3  'L'  'M'  'N'                                   <--- t8
+  4  'O'  'P'  'Q'  'R'  'e'  'f'  'g'  'h'          <--- t9
+  5  'S'  'T'  'U'  'V'                              <--- t10
 
-  6  'Ȧ'  'Ḃ'  'Ċ'  'Ḋ'
-  7  'Ṣ'  'Ṭ'  'Ụ'  'Ṿ'
+  6  'Ȧ'  'Ḃ'  'Ċ'  'Ḋ'                              <--- t11
+  7  'Ṣ'  'Ṭ'  'Ụ'  'Ṿ'                              <--- t12
  ---------------------------------------------
 
 ABBBBBBBBCBBBBBBBBD     #
