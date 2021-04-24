@@ -19,6 +19,7 @@ $SPEC{list_border_style_modules} = {
     args => {
         detail => {
             schema => 'bool*',
+            summary => 'Currently does not do anything yet',
             cmdline_aliases => {l=>{}},
         },
     },
@@ -27,10 +28,10 @@ $SPEC{list_border_style_modules} = {
             summary => 'List style names',
             args => {},
         },
-        {
-            summary => 'List style names and their descriptions',
-            args => {detail=>1},
-        },
+        #{
+        #    summary => 'List style names and their descriptions',
+        #    args => {detail=>1},
+        #},
     ],
 };
 sub list_border_style_modules {

@@ -1,3 +1,10 @@
+0.012   2021-04-24  Released-By: PERLANCAR; Urgency: low
+
+	- No functional changes.
+
+	- [ux] Add an example for each CLI.
+
+
 0.011   2021-02-04  Released-By: PERLANCAR; Urgency: medium
 
 	- [cli show-border-style][ux] Add legends for each row of border
