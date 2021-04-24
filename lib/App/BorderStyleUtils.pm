@@ -22,6 +22,16 @@ $SPEC{list_border_style_modules} = {
             cmdline_aliases => {l=>{}},
         },
     },
+    examples => [
+        {
+            summary => 'List style names',
+            args => {},
+        },
+        {
+            summary => 'List style names and their descriptions',
+            args => {detail=>1},
+        },
+    ],
 };
 sub list_border_style_modules {
     require Module::List::Tiny;
@@ -51,6 +61,12 @@ $SPEC{show_border_style} = {
             pos => 0,
         },
     },
+    examples => [
+        {
+            summary => 'Show the details for the ASCII::SingleLineDoubleAfterHeader border style',
+            args => {style=>'ASCII::SingleLineDoubleAfterHeader'},
+        },
+    ],
 };
 sub show_border_style {
     require Module::Load::Util;
