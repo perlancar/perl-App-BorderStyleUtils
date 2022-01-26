@@ -1,15 +1,15 @@
 package App::BorderStyleUtils;
 
-# AUTHORITY
-# DATE
-# DIST
-# VERSION
-
 use 5.010001;
 use strict;
 use utf8;
 use warnings;
 use Log::ger;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 our %SPEC;
 
@@ -113,6 +113,10 @@ sub show_border_style {
         t2 => sub { "Table without header row, with data rows" },
         t3 => sub { "Table with header row, but without any data row" },
         t4 => sub { "Table with row/column spans" },
+        t13=> sub { "Table with multirow header" },
+        t14=> sub { "Table with multirow header (separator line cut by rowspan)" },
+
+
         t5 => sub { "top border" },
         t6 => sub { "header row" },
         t7 => sub { "separator between header & data row" },
@@ -177,6 +181,36 @@ L           M ......... N     #
 OPPPPPPPPPPPh           N     #
 L ......... M           N     #
 STTTTTTTTTTTUTTTTTTTTTTTV     #
+
+ABBBCBBBCBBBCBBBD     #
+E ,,,,, F , F , G     #
+ȮṖṖṖḟṖṖṖꝘṖṖṖėṖṖṖṘ     #
+E ,,,,, F , F , G     #
+ȮṖṖṖṖṖṖṖꝘṖṖṖeṖṖṖṘ     #
+E       F ,,,,, G     #
+E ,,,,, ġṖṖṖṖṖṖṖṘ     #
+E       F       G     #
+ȮṖṖṖṖṖṖṖḣ ,,,,, G     #
+E ,,,,, F       G     #
+HIIIaIIIJIIIbIIIK     # t13
+L . M . M ..... N     #
+OPPPfPPPQPPPePPPR     #
+L ..... M . M . N     #
+OPPPPPPPQPPPePPPR     #
+L       M ..... N     #
+L ..... gPPPPPPPR     #
+L       M       N     #
+OPPPPPPPh ..... N     #
+L ..... M       N     #
+STTTTTTTUTTTTTTTV     #
+
+ABBBBBBBBBCBBBBBBBBBBBBBBBBBBBBBCBBBBBBBBBD     #
+F ,,,,,,, F       ,,,,,,,       F ,,,,,,, G     #
+H         cIIIIIIIIIIaIIIIIIIIIId         J     #
+L         M ,,,,,,,, M ,,,,,,,, F         N     # t14
+OPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPR     #
+M ,,,,,,  M ,,,,,,   M ,,,,,,   M ,,,,,,  N     #
+STTTTTTTTTUTTTTTTTTTTUTTTTTTTTTTUTTTTTTTTTV     #
 _
 
     $table =~ s{([A-Za-su-zȦḂĊḊṢṬỤṾ#]|t\d+|([.,])+)}
