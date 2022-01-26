@@ -1,3 +1,8 @@
+0.012   2022-01-26  Released-By: PERLANCAR; Urgency: medium
+
+        - Update to BorderStyle 2.0.8.
+
+
 0.011   2021-02-04  Released-By: PERLANCAR; Urgency: medium
 
 	- [cli show-border-style][ux] Add legends for each row of border
