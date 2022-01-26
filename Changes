@@ -1,3 +1,8 @@
+0.013   2022-01-26  Released-By: PERLANCAR; Urgency: medium
+
+        - [bugfix] Didn't substitute border characters 'c' and 'd'.
+
+
 0.012   2022-01-26  Released-By: PERLANCAR; Urgency: medium
 
         - Update to BorderStyle 2.0.8.
