@@ -78,6 +78,8 @@ sub show_border_style {
         K => sub { $bs->get_border_char(2, 3) // '' },
         a => sub { $bs->get_border_char(2, 4) // '' },
         b => sub { $bs->get_border_char(2, 5) // '' },
+        c => sub { $bs->get_border_char(2, 6) // '' },
+        d => sub { $bs->get_border_char(2, 7) // '' },
         L => sub { $bs->get_border_char(3, 0) // '' },
         M => sub { $bs->get_border_char(3, 1) // '' },
         N => sub { $bs->get_border_char(3, 2) // '' },
