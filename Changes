@@ -1,3 +1,8 @@
+0.015   2022-01-27  Released-By: PERLANCAR; Urgency: medium
+
+        - [cli show-border-style] A couple more bugfixes.
+
+
 0.014   2022-01-27  Released-By: PERLANCAR; Urgency: high
 
         - Merge releases 0.012 and 0.012.1.
