@@ -3,9 +3,19 @@
         - [bugfix] Didn't substitute border characters 'c' and 'd'.
 
 
-0.012   2022-01-26  Released-By: PERLANCAR; Urgency: medium
+0.012.1 2022-01-26  Released-By: PERLANCAR; Urgency: medium
 
         - Update to BorderStyle 2.0.8.
+
+        - UPDATE 2022-01-27: Rename version from 0.012 to 0.012.1 due to
+          conflict.
+
+
+0.012   2021-04-24  Released-By: PERLANCAR; Urgency: low
+
+	- No functional changes.
+
+	- [ux] Add an example for each CLI.
 
 
 0.011   2021-02-04  Released-By: PERLANCAR; Urgency: medium
