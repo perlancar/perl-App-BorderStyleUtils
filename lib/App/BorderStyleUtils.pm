@@ -106,6 +106,15 @@ sub show_border_style {
         'Ụ' => sub { $bs->get_border_char(7, 2) // '' },
         'Ṿ' => sub { $bs->get_border_char(7, 3) // '' },
 
+        'Ȯ' => sub { $bs->get_border_char(8, 0) // '' },
+        'Ṗ' => sub { $bs->get_border_char(8, 1) // '' },
+        'Ꝙ' => sub { $bs->get_border_char(8, 2) // '' },
+        'Ṙ' => sub { $bs->get_border_char(8, 3) // '' },
+        'ė' => sub { $bs->get_border_char(8, 4) // '' },
+        'ḟ' => sub { $bs->get_border_char(8, 5) // '' },
+        'ġ' => sub { $bs->get_border_char(8, 6) // '' },
+        'ḣ' => sub { $bs->get_border_char(8, 7) // '' },
+
         x => sub { 'x' },
         y => sub { 'y' },
         ###
@@ -115,8 +124,8 @@ sub show_border_style {
         t2 => sub { "Table without header row, with data rows" },
         t3 => sub { "Table with header row, but without any data row" },
         t4 => sub { "Table with row/column spans" },
-        t13=> sub { "Table with multirow header" },
-        t14=> sub { "Table with multirow header (separator line cut by rowspan)" },
+        t14=> sub { "Table with multirow header" },
+        t15=> sub { "Table with multirow header (separator line cut by rowspan)" },
 
 
         t5 => sub { "top border" },
@@ -127,6 +136,7 @@ sub show_border_style {
         t10=> sub { "bottom border" },
         t11=> sub { "top border (for case when there is no header row)" },
         t12=> sub { "bottom border (for case when there is header row but no data row)" },
+        t13=> sub { "separator between header rows" },
         _symbols => sub {
             my $template = shift;
             if ($template =~ /\A[.,]+\z/) {
@@ -150,19 +160,20 @@ sub show_border_style {
 
   6  'Ȧ'  'Ḃ'  'Ċ'  'Ḋ'                              <--- t11
   7  'Ṣ'  'Ṭ'  'Ụ'  'Ṿ'                              <--- t12
+  8  'Ȯ'  'Ṗ'  'Ꝙ'  'Ṙ'  'ė'  'ḟ'  'ġ'  'ḣ'          <--- t13
  ---------------------------------------------
 
 ABBBBBBBBCBBBBBBBBD     #
 E ,,,,,, F ,,,,,, G     #
-HIIIIIIIIJIIIIIIIIK     #
+HIIIIIIIIJIIIIIIIIK     # <--- t7
 L ...... M ...... N     # t1
-OPPPPPPPPQPPPPPPPPR     #
+OPPPPPPPPQPPPPPPPPR     # <--- t9
 L ...... M ...... N     #
 STTTTTTTTUTTTTTTTTV     #
 
 ȦḂḂḂḂḂḂḂḂĊḂḂḂḂḂḂḂḂḊ     #
 L ...... M ...... N     # t2
-OPPPPPPPPQPPPPPPPPR     #
+OPPPPPPPPQPPPPPPPPR     # <--- t7
 L ...... M ...... N     #
 STTTTTTTTUTTTTTTTTV     #
 
@@ -170,52 +181,52 @@ ABBBBBBBBCBBBBBBBBD     #
 E ,,,,,, F ,,,,,, G     # t3
 ṢṬṬṬṬṬṬṬṬỤṬṬṬṬṬṬṬṬṾ     #
 
-ABBBBBBBBBBBCBBBBBCBBBBBD     #
-E ,,,,,,,,, F ,,, F ,,, G     #
-HIIIIIaIIIIIJIIIIIbIIIIIK     #
-L ... M ... M ......... N     #
-OPPPPPfPPPPPQPPPPPePPPPPR     #
-L ......... M ... M ... N     #
-OPPPPPPPPPPPQPPPPPfPPPPPR     # t4
-L ......... M ......... N     #
-L           gPPPPPPPPPPPR     #
-L           M ......... N     #
-OPPPPPPPPPPPh           N     #
-L ......... M           N     #
-STTTTTTTTTTTUTTTTTTTTTTTV     #
+ABBBBBBBBBBBCBBBBBBBBCBBBBBBBBD     #
+E ,,,,,,,,, F ,,,,,, F ,,,,,, G     #
+HIIIIIaIIIIIJIIIIIIIIbIIIIIIIIK     # <--- t7
+L ... M ... M ............... N     #
+OPPPPPfPPPPPQPPPPPPPPePPPPPPPPR     # <--- t9
+L ......... M ...... M ...... N     # t4
+OPPPPPPPPPPPQPPPPPPPPfPPPPPPPPR     # <--- t9
+L ......... M ............... N     #
+L           gPPPPPPPPPPPPPPPPPR     # <--- t9
+L           M ............... N     #
+OPPPPPPPPPPPh                 N     # <--- t9
+L ......... M                 N     #
+STTTTTTTTTTTUTTTTTTTTTTTTTTTTTV     #
 
-ABBBCBBBCBBBCBBBD     #
-E ,,,,, F , F , G     #
-ȮṖṖṖḟṖṖṖꝘṖṖṖėṖṖṖṘ     #
-E ,,,,, F , F , G     #
-ȮṖṖṖṖṖṖṖꝘṖṖṖeṖṖṖṘ     #
-E       F ,,,,, G     #
-E ,,,,, ġṖṖṖṖṖṖṖṘ     #
-E       F       G     #
-ȮṖṖṖṖṖṖṖḣ ,,,,, G     #
-E ,,,,, F       G     #
-HIIIaIIIJIIIbIIIK     # t13
-L . M . M ..... N     #
-OPPPfPPPQPPPePPPR     #
-L ..... M . M . N     #
-OPPPPPPPQPPPePPPR     #
-L       M ..... N     #
-L ..... gPPPPPPPR     #
-L       M       N     #
-OPPPPPPPh ..... N     #
-L ..... M       N     #
-STTTTTTTUTTTTTTTV     #
+ABBBBBBBBBBBBBCBBBBBBBBBCBBBBBBBBBD     #
+E ,,,......,, F ,,,,,,, F ,,,,,,, G     #
+ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖėṖṖṖṖṖṖṖṖṖṘ     # <--- t13
+E ,,,,,,,,,,, F ,,,,,,, F ,,,,,,, G     #
+ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖeṖṖṖṖṖṖṖṖṖṘ     # <--- t13
+E             F ,,,,,,,,,,,,,,,,, G     #
+E ,,,,,,,,,,, ġṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṘ     # <--- t13
+E             F                   G     #
+ȮṖṖṖṖṖṖṖṖṖṖṖṖṖḣ ,,,,,,,,,,,,,,,,, G     # <--- t13
+E ,,,,,,,,,,, F                   G     #
+HIIIIIIaIIIIIIJIIIIIIIIIbIIIIIIIIIK     # t14
+L .... M .... M ................. N     #
+OPPPPPPfPPPPPPQPPPPPPPPPePPPPPPPPPR     # <--- t9
+L ........... M ....... M ....... N     #
+OPPPPPPPPPPPPPQPPPPPPPPPePPPPPPPPPR     # <--- t9
+L             M ................. N     #
+L ........... gPPPPPPPPPPPPPPPPPPPR     # <--- t9
+L             M                   N     #
+OPPPPPPPPPPPPPh ................. N     # <--- t9
+L ........... M                   N     #
+STTTTTTTTTTTTTUTTTTTTTTTTTTTTTTTTTV     #
 
 ABBBBBBBBBCBBBBBBBBBBBBBBBBBBBBBCBBBBBBBBBD     #
 F ,,,,,,, F       ,,,,,,,       F ,,,,,,, G     #
-H         cIIIIIIIIIIaIIIIIIIIIId         J     #
-L         M ,,,,,,,, M ,,,,,,,, F         N     # t14
-OPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPR     #
+H         cIIIIIIIIIIaIIIIIIIIIId         J     # <--- t7
+L         M ,,,,,,,, M ,,,,,,,, F         N     # t15
+OPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPR     # <--- t9
 M ,,,,,,  M ,,,,,,   M ,,,,,,   M ,,,,,,  N     #
 STTTTTTTTTUTTTTTTTTTTUTTTTTTTTTTUTTTTTTTTTV     #
 _
 
-    $table =~ s{([A-Za-su-zȦḂĊḊṢṬỤṾ#]|t\d+|([.,])+)}
+    $table =~ s{([A-Za-su-zȦḂĊḊṢṬỤṾȮṖꝘṘėḟġḣ#]|t\d+|([.,])+)}
                {
                    $2 ? $map->{_symbols}->($1) :
                        $map->{$1} ? $map->{$1}->() : $1
