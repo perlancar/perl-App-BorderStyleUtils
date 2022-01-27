@@ -214,19 +214,19 @@ STTTTTTTTTTTUTTTTTTTTTTTTTTTTTV     #
 
 ABBBBBBBBBBBBBCBBBBBBBBBCBBBBBBBBBD     #
 E ,,,......,, F ,,,,,,, F ,,,,,,, G     #
-ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖėṖṖṖṖṖṖṖṖṖṘ     # <--- t13
+ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖṘ     # <--- t13
 E ,,,,,,,,,,, F ,,,,,,, F ,,,,,,, G     #
-ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖeṖṖṖṖṖṖṖṖṖṘ     # <--- t13
+ȮṖṖṖṖṖṖṖṖṖṖṖṖṖꝘṖṖṖṖṖṖṖṖṖḟṖṖṖṖṖṖṖṖṖṘ     # <--- t13
 E             F ,,,,,,,,,,,,,,,,, G     #
 E ,,,,,,,,,,, ġṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṖṘ     # <--- t13
 E             F                   G     #
 ȮṖṖṖṖṖṖṖṖṖṖṖṖṖḣ ,,,,,,,,,,,,,,,,, G     # <--- t13
 E ,,,,,,,,,,, F                   G     #
-HIIIIIIaIIIIIIJIIIIIIIIIbIIIIIIIIIK     # t14
+HIIIIIIaIIIIIIJIIIIIIIIIIIIIIIIIIIK     # t14
 L .... M .... M ................. N     #
 OPPPPPPfPPPPPPQPPPPPPPPPePPPPPPPPPR     # <--- t9
 L ........... M ....... M ....... N     #
-OPPPPPPPPPPPPPQPPPPPPPPPePPPPPPPPPR     # <--- t9
+OPPPPPPPPPPPPPQPPPPPPPPPfPPPPPPPPPR     # <--- t9
 L             M ................. N     #
 L ........... gPPPPPPPPPPPPPPPPPPPR     # <--- t9
 L             M                   N     #
@@ -236,7 +236,7 @@ STTTTTTTTTTTTTUTTTTTTTTTTTTTTTTTTTV     #
 
 ABBBBBBBBBCBBBBBBBBBBBBBBBBBBBBBCBBBBBBBBBD     #
 F ,,,,,,, F       ,,,,,,,       F ,,,,,,, G     #
-H         cIIIIIIIIIIaIIIIIIIIIId         J     # <--- t7
+F         cIIIIIIIIIIaIIIIIIIIIId         G     # <--- t7
 L         M ,,,,,,,, M ,,,,,,,, F         N     # t15
 OPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPR     # <--- t9
 M ,,,,,,  M ,,,,,,   M ,,,,,,   M ,,,,,,  N     #
