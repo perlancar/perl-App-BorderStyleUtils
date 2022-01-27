@@ -235,11 +235,11 @@ L ........... M                   N     #
 STTTTTTTTTTTTTUTTTTTTTTTTTTTTTTTTTV     #
 
 ABBBBBBBBBCBBBBBBBBBBBBBBBBBBBBBCBBBBBBBBBD     #
-F ,,,,,,, F       ,,,,,,,       F ,,,,,,, G     #
-F         cIIIIIIIIIIaIIIIIIIIIId         G     # <--- t7
-L         M ,,,,,,,, M ,,,,,,,, F         N     # t15
+E ,,,,,,, F       ,,,,,,,       F ,,,,,,, G     #
+L         cIIIIIIIIIIaIIIIIIIIIId         G     # <--- t7
+L         M ,,,,,,,, M ,,,,,,,, M         N     # t15
 OPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPPQPPPPPPPPPR     # <--- t9
-M ,,,,,,  M ,,,,,,   M ,,,,,,   M ,,,,,,  N     #
+L ,,,,,,  M ,,,,,,   M ,,,,,,   M ,,,,,,  N     #
 STTTTTTTTTUTTTTTTTTTTUTTTTTTTTTTUTTTTTTTTTV     #
 _
 
